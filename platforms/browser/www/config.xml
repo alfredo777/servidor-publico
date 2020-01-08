@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.diputados.puebla" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <allow-navigation href="*" />
+    <name>Diputados Puebla</name>
+    <description>
+        App de Gestión del Congreso de Puebla
+    </description>
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-navigation href="http://172.10.200.66:3000" />
+    <allow-navigation href="http://172.10.200.66" />
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-targetSdkVersion" value="26" />
+    <preference name="orientation" value="portrait" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="phonegap-version" value="cli-7.0.1" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="deployment-target" value="7.0" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+</widget>

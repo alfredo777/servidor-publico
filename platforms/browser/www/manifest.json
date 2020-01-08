@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Diputados Puebla",
+  "short_name": "Diputados Puebla",
+  "version": "com.diputados.puebla",
+  "description": "App de Gestión del Congreso de Puebla",
+  "author": "PhoneGap Team",
+  "icons": [],
+  "orientation": "portrait",
+  "start_url": "index.html"
+}

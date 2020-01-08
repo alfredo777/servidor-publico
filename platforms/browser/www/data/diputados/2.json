@@ -1,0 +1,12 @@
+{
+	"id": 2,
+	"nombre": "Guadalupe Equitín Lastiri",
+	"cargo" : "Diputada por Puebla",
+	"partido": "MOVIMIENTO CIUDADANO",
+	"distrito": "Distrito 1",
+	"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque finibus aliquet neque, a ultricies massa posuere ut. Suspendisse id nulla velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In elementum tellus mollis lectus porta, sit amet vestibulum risus eleifend. Duis nec nisi vitae nisi sagittis ullamcorper. Ut lectus augue, scelerisque a mollis nec, bibendum non orci. Donec eu erat vitae magna commodo rhoncus et et nisl. Sed turpis sem, euismod vel varius non, volutpat interdum nisl. In id magna faucibus, sodales nibh vitae, aliquam nunc. Vivamus arcu tortor, aliquet non fermentum pulvinar, eleifend sit amet risus. Mauris fringilla molestie mi a mollis. Mauris tempus tellus metus, at gravida ex fringilla ut. Pellentesque eu ligula ut ipsum tincidunt fermentum nec vel enim. Proin venenatis orci a quam porttitor laoreet. Nunc non velit porta, aliquam tellus a, tristique orci. Vestibulum eget magna sit amet ex tempus porta. Vestibulum faucibus libero nec ipsum efficitur porttitor. Vestibulum consequat ac nunc non porttitor. Vivamus risus turpis, vehicula at odio ut, vulputate blandit nisi. Proin tempus nec lacus eu pharetra. Duis tellus purus, posuere vel pretium id, lacinia sed nulla. Aenean vel neque ac dolor condimentum congue vel eu odio. Integer iaculis elementum diam, ut sodales neque. Sed pharetra rhoncus magna sed tincidunt. Aliquam erat volutpat. Proin sollicitudin ex sed viverra feugiat. Vivamus a velit quis justo pretium blandit ut nec felis. Maecenas sodales tellus vel tellus fermentum mollis. Mauris imperdiet vehicula lectus, quis dictum nisl fringilla at. Donec rutrum libero id erat viverra semper.",
+	"contacto": "guadalupe.esquitin@congresodepuebla.gob.mx",
+	"img": "ALEJANDRA_GUADALUPE_ESQUITIN_LASTIRI.png",
+	"aprobadas": 50,
+	"solicitudes": 70
+}

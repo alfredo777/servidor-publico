@@ -1,0 +1,9 @@
+{
+	"diputados": [
+		{"id": 1, "nombre": "Gabriel Biestro Medinilla", "partido": "MORENA", "distrito": "Representación Proporcional", "img": "GABRIEL_JUAN_MANUEL_BIESTRO_MEDINILLA.png"},
+		{"id": 2, "nombre": "Guadalupe Esquitín Lastiri", "partido": "MOVIMIENTO CIUDADANO", "distrito": "Distrito 1", "img": "ALEJANDRA_GUADALUPE_ESQUITIN_LASTIRI.png"},
+		{"id": 3, "nombre": "Liliana Luna Aguirre", "partido": "PRD", "distrito": "Distrito 2", "img": "LILIANA_LUNA_AGUIRRE.png"},
+		{"id": 4, "nombre": "Raúl Espinosa Martínez", "partido": "PAN", "distrito": "Distrito 3", "img": "RAUL_ESPINOSA_MARTINEZ.png"},
+		{"id": 5, "nombre": "Hugo Alejo Domínguez", "partido": "INDEPENDIENTE", "distrito": "Distrito 4", "img": "HUGO_ALEJO_DOMINGUEZ.png"}
+	]
+}

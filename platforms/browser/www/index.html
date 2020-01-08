@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' data: blob:;  font-src 'self' https://fonts.gstatic.com data:; media-src *; img-src * data: content:; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval' data: blob:;">-->
+    <meta http-equiv="Content-Security-Policy"
+    content="default-src *; 
+    style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
+    script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+
+    <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+
+
+    <title>Diputados</title>
+</head>
+
+<body>
+    
+    <div id="app"></div>
+</body>
+<script src="js/bundle.js"></script>
+<script src="js/hfunction.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
+
+<script type="text/javascript" src="cordova.js"></script>
+
+<script type="text/javascript">
+  var diputados = "http://172.10.200.66:3000/api_general/diputados";
+  LoadHTML('./parts/menu.html', 'app');
+  HTPL("./parts/diputados.hbs",'diputados', diputados);
+  setTimeout(function(){
+      data = "http://172.10.200.66:3000/api_general/transmision";
+      HTPL("./parts/noticetransmision.hbs", 'transmision', data);
+  },3000);
+
+  function LoadHTML(url, id){
+        fetch(url)
+          .then(function(response) {
+            return response.text();
+          })
+          .then(function(html) {
+             document.getElementById(id).innerHTML = html;
+
+            
+          })
+          .catch(function (err) {
+            // There was an error
+            console.warn('Something went wrong.', err);
+        });
+  }
+
+
+
+  function GetHome(){
+    changePage("home.html");
+    LoadHTML('./parts/menu.html', 'app');
+    HTPL("./parts/diputados.hbs", 'diputados', diputados);
+    setTimeout(function(){
+      data = "http://172.10.200.66:3000/api_general/transmision";
+      HTPL("./parts/noticetransmision.hbs", 'transmision', data);
+    },1000);
+  }
+
+
+  function changePage(pushpage){
+    document.querySelector('#navigateINDEX').pushPage(pushpage);
+  }
+
+  function LoadProfile(id){
+    changePage('profile.html');
+    data = "http://172.10.200.66:3000/api_general/diputado?id="+id;
+    HTPL("./parts/perfil.hbs", 'perfil', data);
+
+  }
+
+  function Solicitud(id){
+    changePage('solicitud.html');
+    HTPL("./parts/form_peticion.hbs", 'solicitud', "./data/form_peticion.json");
+    setTimeout(function(){
+       document.getElementById('form-action-base-id').innerHTML = "<input type='text' id='diputado_id' name='id' style='display:none;' value="+"'"+id+"'"+"></input>";
+    },1000);
+   
+    
+  }
+
+  function Propuestas(id){
+    changePage('propuestas.html');
+    data = "http://172.10.200.66:3000/api_general/propuestas_diputado?id="+id;
+    HTPL("./parts/propuestas.hbs", 'propuesta', data);
+
+  }
+
+  function Propuesta(id){
+    changePage('propuesta.html');
+    data = "http://172.10.200.66:3000/api_general/read_propose?id="+id;
+    HTPL("./parts/propuesta.hbs", 'leerpropuesta', data);
+
+  }
+
+  function Ranking(id){
+    changePage('ranking.html');
+    data = "http://172.10.200.66:3000/api_general/ranking_diputado?id="+id;
+    HTPL("./parts/ranking.hbs", 'ranking', data);
+  }
+
+  function GetTrasmision(fecha){
+    changePage('transmisionx.html');
+    data = "http://172.10.200.66:3000/api_general/transmision";
+    HTPL("./parts/nexttrasnmision.hbs", 'transmisionx', data);
+  }
+
+  function sendFormBase(){
+      var data = new FormData(document.getElementById('form-action-base'));
+      console.log(data);
+      fetch('http://172.10.200.66:3000/api_general/gestion', {
+         method: 'POST',
+         body: data
+      })
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function(json) {
+         console.log(json);
+         alert('Gracias por ingresar la información pronto le daremos respuesta.');
+         GetHome();
+
+      })
+      .catch(function(err) {
+          console.warn(err);
+          return false;
+          alert('Gracias por ingresar la información pronto le daremos respuesta.');
+          GetHome();
+      });
+
+    }
+
+
+
+   function animateCSS(element, animationName, callback) {
+        const elementx =  document.querySelector(element);
+        elementx.classList.add('animated', 'bounceOutLeft');
+   }
+</script>
+
+<script type="text/javascript" charset="utf-8">
+
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        var element = document.getElementById('deviceProperties');
+
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+    }
+
+</script>
+
+</html>
